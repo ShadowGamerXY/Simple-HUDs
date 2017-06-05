@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "${mc_version}-${mod_version}${mod_relese_type}"
+group = mod_group
+archivesBaseName = mod_id
+
+sourceCompatibility = targetCompatibility = "1.8"
+compileJava {
+    sourceCompatibility = targetCompatibility = "1.8"
+}
+
+minecraft {
+    version = mc_version + "-" + forge_version
+    runDir = "run"
+
+    mappings = mcp_mappings_version
+}
+
+dependencies {
+
+}
+
+repositories {
+    maven {
+        name 'DVS1 Maven FS'
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+    from sourceSets.api.allJava
+}
+
+task apiJar(type: Jar) {
+    classifier = 'api'
+    from sourceSets.api.output
+
+    // https://github.com/MinecraftForge/ForgeGradle/issues/369
+    // Gradle should be able to pull them from the -sources jar.
+    from sourceSets.main.allJava
+}
+
+artifacts {
+    archives sourcesJar
+    archives apiJar
+}
