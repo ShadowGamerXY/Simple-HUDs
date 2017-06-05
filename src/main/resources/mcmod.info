@@ -1,0 +1,16 @@
+[
+{
+  "modid": "sh",
+  "name": "Simple HUDs",
+  "description": "This mod replaces vanilla HUDs with new ones",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["SirShadow"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [HUD Framework]
+}
+]
