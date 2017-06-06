@@ -1,12 +1,10 @@
-package sirshadow.hudframework.proxy;
+package sirshadow.simplehuds.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import sirshadow.hudframework.CommandHUD;
-import sun.rmi.log.LogHandler;
 
 /**
  * Created by Shadow on 31.5.2017.
@@ -30,7 +28,6 @@ public class ServerProxy extends CommonProxy {
     @Override
     public void serverStartEvent(FMLServerStartingEvent e) {
         super.serverStartEvent(e);
-        System.out.println("SERVER");
     }
 
     @Override

@@ -1,4 +1,4 @@
-package sirshadow.hudframework;
+package sirshadow.simplehuds;
 
 /**
  * Created by Shadow on 31.5.2017.
@@ -6,9 +6,9 @@ package sirshadow.hudframework;
 public class ModLibrary {
 
     public static class ModInfo{
-        public static final String MOD_ID = "hf",MOD_NAME = "Hud Framework",MOD_VERSION = "0.1";
+        public static final String MOD_ID = "sh",MOD_NAME = "Simple HUDs",MOD_VERSION = "0.1";
 
-        public static final String CLIENT_PROXY = "sirshadow.hudframework.proxy.ClientProxy",SERVER_PROXY = "sirshadow.hudframework.proxy.ServerProxy";
+        public static final String CLIENT_PROXY = "sirshadow.simplehuds.proxy.ClientProxy",SERVER_PROXY = "sirshadow.simplehuds.proxy.ServerProxy";
     }
 
 }

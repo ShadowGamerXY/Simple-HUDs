@@ -1,4 +1,4 @@
-package sirshadow.hudframework.proxy;
+package sirshadow.simplehuds.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
