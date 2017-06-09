@@ -11,7 +11,7 @@ import sirshadow.simplehuds.proxy.IProxy;
  * Created by sirshadow on 6/5/17.
  */
 
-@Mod(modid = ModLibrary.ModInfo.MOD_ID,name = ModLibrary.ModInfo.MOD_NAME,version = ModLibrary.ModInfo.MOD_VERSION,dependencies = "required-after:hf")
+@Mod(modid = ModLibrary.ModInfo.MOD_ID,name = ModLibrary.ModInfo.MOD_NAME,version = ModLibrary.ModInfo.MOD_VERSION,dependencies = "required-after:hf",guiFactory = ModLibrary.ModInfo.GUI_FACTORY)
 public class SimpleHUDs {
 
     @Mod.Instance

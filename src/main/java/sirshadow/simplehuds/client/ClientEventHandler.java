@@ -1,5 +1,6 @@
 package sirshadow.simplehuds.client;
 
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -18,6 +19,9 @@ public class ClientEventHandler {
     @SubscribeEvent
     public void onGameOverlay(RenderGameOverlayEvent event) {
         elementTypes.add(RenderGameOverlayEvent.ElementType.HEALTH);
+        elementTypes.add(RenderGameOverlayEvent.ElementType.FOOD);
+        elementTypes.add(RenderGameOverlayEvent.ElementType.EXPERIENCE);
+
 
         for (RenderGameOverlayEvent.ElementType type : elementTypes) {
             if (event.isCancelable()) {

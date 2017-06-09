@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class ConfigurationHandler {
     public static Configuration configuration;
 
+    public static String HUD_CATEGORY;
+
     public static void init(File file){
         if (configuration == null){
             configuration = new Configuration(file);
