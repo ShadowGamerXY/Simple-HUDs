@@ -12,6 +12,7 @@ import sirshadow.simplehuds.client.ClientEventHandler;
 import sirshadow.simplehuds.client.hud.HUDExp;
 import sirshadow.simplehuds.client.hud.HUDHealth;
 import sirshadow.simplehuds.client.hud.HUDHunger;
+import sirshadow.simplehuds.client.hud.HUDWater;
 
 /**
  * Created by Shadow on 31.5.2017.
@@ -24,6 +25,7 @@ public class ClientProxy extends CommonProxy {
         HUDRenderHelper.hudElementsMap.put("HealthHUD",new HUDHealth(0,0.7f));
         HUDRenderHelper.hudElementsMap.put("hungerHUD",new HUDHunger(0f,0.8f));
         HUDRenderHelper.hudElementsMap.put("expHUD",new HUDExp(0f,0.9F));
+        HUDRenderHelper.hudElementsMap.put("waterHUD",new HUDWater(0f,0.5f));
     }
 
     @Override
