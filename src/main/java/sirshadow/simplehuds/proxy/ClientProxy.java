@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import sirshadow.hudframework.client.hud.HUDRenderHelper;
+import sirshadow.simplehuds.ConfigurationHandler;
 import sirshadow.simplehuds.client.ClientEventHandler;
 import sirshadow.simplehuds.client.hud.HUDExp;
 import sirshadow.simplehuds.client.hud.HUDHealth;
@@ -22,10 +23,10 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
         MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
-        HUDRenderHelper.hudElementsMap.put("HealthHUD",new HUDHealth(0,0.7f));
-        HUDRenderHelper.hudElementsMap.put("hungerHUD",new HUDHunger(0f,0.8f));
-        HUDRenderHelper.hudElementsMap.put("expHUD",new HUDExp(0f,0.9F));
-        HUDRenderHelper.hudElementsMap.put("waterHUD",new HUDWater(0f,0.5f));
+        HUDRenderHelper.hudElementsMap.put("HealthHUD",new HUDHealth(ConfigurationHandler.health_x,ConfigurationHandler.health_y));
+        HUDRenderHelper.hudElementsMap.put("hungerHUD",new HUDHunger(ConfigurationHandler.hunger_x,ConfigurationHandler.hunger_y));
+        HUDRenderHelper.hudElementsMap.put("expHUD",new HUDExp(ConfigurationHandler.exp_x,ConfigurationHandler.exp_y));
+        HUDRenderHelper.hudElementsMap.put("waterHUD",new HUDWater(ConfigurationHandler.water_x,ConfigurationHandler.water_y));
     }
 
     @Override

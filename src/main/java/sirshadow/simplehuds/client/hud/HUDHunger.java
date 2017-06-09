@@ -99,6 +99,7 @@ public class HUDHunger extends HUDElement implements IComponentHoveringText,ICom
     }
     @Override
     public void onPositionChange() {
+        ConfigurationHandler.setValueOfHUD(this.getName(),xPos,yPos);
     }
 
     @Override

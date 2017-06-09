@@ -10,6 +10,7 @@ import sirshadow.hudframework.client.hud.HUDElement;
 import sirshadow.hudframework.client.hud.components.IComponentHoveringText;
 import sirshadow.hudframework.client.hud.components.IComponentTitle;
 import sirshadow.hudframework.client.util.RenderUtil;
+import sirshadow.simplehuds.ConfigurationHandler;
 import sirshadow.simplehuds.ModLibrary;
 
 import java.awt.*;
@@ -32,7 +33,7 @@ public class HUDWater extends HUDElement implements IComponentTitle,IComponentHo
 
         if (mc.currentScreen instanceof GuiHUD)setShouldFade(false);
 
-        float bloodAmount = mc.player.getAir();
+        float airAmount = mc.player.getAir();
         float maxAmount = 300;
 
         if (shouldFade()){
@@ -53,7 +54,7 @@ public class HUDWater extends HUDElement implements IComponentTitle,IComponentHo
         GL11.glPushMatrix();
         GL11.glEnable(GL11.GL_BLEND);
 
-        int amount = Math.max((int) (256 *  (1 - (double)(bloodAmount) / maxAmount)), 0);
+        int amount = Math.max((int) (256 *  (1 - (double)(airAmount) / maxAmount)), 0);
 
         int x = (int)(xPos * scaled.getScaledWidth()) * 4;
         int y = (int)(yPos * scaled.getScaledHeight()) * 4;
@@ -86,6 +87,7 @@ public class HUDWater extends HUDElement implements IComponentTitle,IComponentHo
 
     @Override
     public void onPositionChange() {
+        ConfigurationHandler.setValueOfHUD(this.getName(),xPos,yPos);
     }
 
     @Override

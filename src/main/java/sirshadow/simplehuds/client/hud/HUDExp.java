@@ -9,6 +9,7 @@ import sirshadow.hudframework.client.hud.HUDElement;
 import sirshadow.hudframework.client.hud.components.IComponentHoveringText;
 import sirshadow.hudframework.client.hud.components.IComponentTitle;
 import sirshadow.hudframework.client.util.RenderUtil;
+import sirshadow.simplehuds.ConfigurationHandler;
 import sirshadow.simplehuds.ModLibrary;
 
 import java.awt.*;
@@ -27,7 +28,7 @@ public class HUDExp extends HUDElement implements IComponentTitle,IComponentHove
     public void renderHUD(Minecraft mc) {
         ScaledResolution scaled = new ScaledResolution(mc);
 
-        float bloodAmount = mc.player.experience * mc.player.xpBarCap();
+        float expAmount = mc.player.experience * mc.player.xpBarCap();
         float maxAmount = mc.player.xpBarCap();
 
         GL11.glPushMatrix();
@@ -47,7 +48,7 @@ public class HUDExp extends HUDElement implements IComponentTitle,IComponentHove
         GL11.glPushMatrix();
         GL11.glEnable(GL11.GL_BLEND);
 
-        int amount = Math.max((int) (256 *  (1 - (double)(bloodAmount) / maxAmount)), 0);
+        int amount = Math.max((int) (256 *  (1 - (double)(expAmount) / maxAmount)), 0);
 
         int x = (int)(xPos * scaled.getScaledWidth()) * 4;
         int y = (int)(yPos * scaled.getScaledHeight()) * 4;
@@ -80,6 +81,7 @@ public class HUDExp extends HUDElement implements IComponentTitle,IComponentHove
 
     @Override
     public void onPositionChange() {
+        ConfigurationHandler.setValueOfHUD(this.getName(),xPos,yPos);
     }
 
     @Override

@@ -9,10 +9,8 @@ import net.minecraftforge.fml.client.IModGuiFactory;
 import net.minecraftforge.fml.client.config.DummyConfigElement;
 import net.minecraftforge.fml.client.config.GuiConfig;
 import net.minecraftforge.fml.client.config.IConfigElement;
-
 import sirshadow.simplehuds.ConfigurationHandler;
 import sirshadow.simplehuds.ModLibrary;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +66,6 @@ public class ModGuiFactory implements IModGuiFactory{
             //Add categories to config GUI
             list.add(categoryElement(Configuration.CATEGORY_GENERAL, "General", "Geneeral"));
             list.add(categoryElement(Configuration.CATEGORY_CLIENT, "Client", "Clieent"));
-            list.add(categoryElement(ConfigurationHandler.HUD_CATEGORY,"HUDs","huds"));
             return list;
         }
 

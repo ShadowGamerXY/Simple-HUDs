@@ -31,7 +31,7 @@ public class HUDHealth extends HUDElement implements IComponentHoveringText,ICom
     public void renderHUD(Minecraft mc) {
         ScaledResolution scaled = new ScaledResolution(mc);
 
-        float bloodAmount = mc.player.getHealth();
+        float healthAmount = mc.player.getHealth();
         float maxAmount = mc.player.getMaxHealth();
 
         if (mc.currentScreen instanceof GuiHUD) setShouldFade(false);
@@ -39,13 +39,13 @@ public class HUDHealth extends HUDElement implements IComponentHoveringText,ICom
         GL11.glPushMatrix();
         GL11.glEnable(GL11.GL_BLEND);
 
-        int amount = Math.max((int) (256 *  (1 - (double)(bloodAmount) / maxAmount)), 0);
+        int amount = Math.max((int) (256 *  (1 - (double)(healthAmount) / maxAmount)), 0);
 
         int x = (int)(xPos * scaled.getScaledWidth()) * 4;
         int y = (int)(yPos * scaled.getScaledHeight()) * 4;
 
         if (shouldFade()){
-            if (bloodAmount >= maxAmount){
+            if (healthAmount >= maxAmount){
                 if (fadeEffect > 0)fadeEffect -= 0.01;
             }else {
                 if(fadeEffect < 1) {
@@ -87,6 +87,7 @@ public class HUDHealth extends HUDElement implements IComponentHoveringText,ICom
 
     @Override
     public void onPositionChange() {
+        ConfigurationHandler.setValueOfHUD(this.getName(),xPos,yPos);
     }
 
     @Override
