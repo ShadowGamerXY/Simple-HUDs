@@ -21,6 +21,7 @@ public class ClientEventHandler {
         elementTypes.add(RenderGameOverlayEvent.ElementType.HEALTH);
         elementTypes.add(RenderGameOverlayEvent.ElementType.FOOD);
         elementTypes.add(RenderGameOverlayEvent.ElementType.EXPERIENCE);
+        elementTypes.add(RenderGameOverlayEvent.ElementType.AIR);
 
 
         for (RenderGameOverlayEvent.ElementType type : elementTypes) {
