@@ -16,6 +16,8 @@ public class ConfigurationHandler {
 
     public static String HUD_POS_CATEGORY = "HUD Position";
 
+    public static boolean fps_counter;
+
     /** HUD ELEMENTS **/
     public static float exp_x,exp_y;
     public static float health_x,health_y;
@@ -44,7 +46,7 @@ public class ConfigurationHandler {
         water_x = configuration.getFloat("WaterHUD_x",HUD_POS_CATEGORY,0.0f,0.0f,1000.0f,"");
         water_y = configuration.getFloat("WaterHUD_y",HUD_POS_CATEGORY,0.7f,0.0f,1000.0f,"");
 
-
+        fps_counter = configuration.getBoolean("fps_counter",Configuration.CATEGORY_CLIENT,false,"");
 
         if (configuration.hasChanged()){
             configuration.save();
