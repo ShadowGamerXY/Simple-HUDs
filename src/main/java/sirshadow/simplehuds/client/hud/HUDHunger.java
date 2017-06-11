@@ -109,6 +109,6 @@ public class HUDHunger extends HUDElement implements IComponentHoveringText,ICom
 
     @Override
     public void getHoveringText(List<String> hovText) {
-        hovText.add(I18n.format("hudText.hudHealth.name"));
+        hovText.add(I18n.format("hudText.hudHunger.name"));
     }
 }

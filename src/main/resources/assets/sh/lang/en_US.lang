@@ -1,2 +1,11 @@
 hudElement.HealthHUD.name=Health HUD
 hudText.hudHealth.name=This is the replacement of the vanilla health bar
+
+hudElement.HungerHUD.name=Hunger HUD
+hudText.hudHunger.name=Replacement of the vanilla hunger bar
+
+hudElement.WaterHUD.name=Air HUD
+hudText.hudWater.name=Replacement of the vanilla bubbles bar
+
+hudElement.ExpHUD.name=Experience HUD
+hudText.hudText.name=Replacement of vanilla exp bar
