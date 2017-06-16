@@ -25,7 +25,7 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
         HUDRenderHelper.hudElementsMap.put("HealthHUD",new HUDHealth(ConfigurationHandler.health_x,ConfigurationHandler.health_y));
         HUDRenderHelper.hudElementsMap.put("hungerHUD",new HUDHunger(ConfigurationHandler.hunger_x,ConfigurationHandler.hunger_y));
-        HUDRenderHelper.hudElementsMap.put("expHUD",new HUDExp(ConfigurationHandler.exp_x,ConfigurationHandler.exp_y));
+        HUDRenderHelper.hudElementsMap.put("expHUD",new HUDExp());
         HUDRenderHelper.hudElementsMap.put("waterHUD",new HUDWater(ConfigurationHandler.water_x,ConfigurationHandler.water_y));
     }
 

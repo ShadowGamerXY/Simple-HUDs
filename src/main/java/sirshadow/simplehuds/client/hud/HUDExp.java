@@ -18,10 +18,10 @@ import java.util.List;
 /**
  * Created by sirshadow on 6/9/17.
  */
-public class HUDExp extends HUDElement implements IComponentTitle,IComponentHoveringText {
+public class HUDExp extends HUDElement implements IComponentTitle,IComponentHoveringText{
 
-    public HUDExp(float x, float y) {
-        super("ExpHUD", x, y, 256, 32);
+    public HUDExp() {
+        super("ExpHUD",ConfigurationHandler.exp_x,ConfigurationHandler.exp_y, 256, 32);
     }
 
     @Override
