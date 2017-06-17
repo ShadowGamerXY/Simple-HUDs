@@ -23,8 +23,8 @@ public class HUDHealth extends HUDElement implements IComponentHoveringText,ICom
 
     public float fadeEffect = 1F;
 
-    public HUDHealth(float x, float y) {
-        super("HealthHUD", x, y, 256, 32);
+    public HUDHealth() {
+        super("HealthHUD", ConfigurationHandler.getXofHUD("HealthHUD"), ConfigurationHandler.getYofHUD("HealthHUD"), 256, 32);
     }
 
     @Override

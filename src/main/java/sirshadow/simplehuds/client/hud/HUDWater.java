@@ -23,8 +23,8 @@ public class HUDWater extends HUDElement implements IComponentTitle,IComponentHo
 
     public float fadeEffect = 1F;
 
-    public HUDWater(float x, float y) {
-        super("WaterHUD", x, y, 256, 32);
+    public HUDWater() {
+        super("WaterHUD", ConfigurationHandler.getXofHUD("WaterHUD"), ConfigurationHandler.getYofHUD("WaterHUD"), 256, 32);
     }
 
     @Override

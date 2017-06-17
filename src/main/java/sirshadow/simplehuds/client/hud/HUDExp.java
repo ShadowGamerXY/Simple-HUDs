@@ -21,7 +21,7 @@ import java.util.List;
 public class HUDExp extends HUDElement implements IComponentTitle,IComponentHoveringText{
 
     public HUDExp() {
-        super("ExpHUD",ConfigurationHandler.exp_x,ConfigurationHandler.exp_y, 256, 32);
+        super("ExpHUD",ConfigurationHandler.getXofHUD("ExpHUD"),ConfigurationHandler.getYofHUD("ExpHUD"), 256, 32);
     }
 
     @Override
